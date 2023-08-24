@@ -1,0 +1,98 @@
+HeaderFilterRegex: '^.*/(base)/.*(h|hpp)$'
+
+Checks: '*,
+    modernize-*,
+    abseil-*,
+    -altera-*,
+    -android-*,
+    bugprone-*,
+    cppcoreguidelines-*,
+    performance-*,
+    readability-*,
+
+    -cert-dcl16-c,
+    -cert-dcl37-c,
+    -cert-dcl51-cpp,
+    -cert-err58-cpp,
+    -cert-msc32-c,
+    -cert-msc51-cpp,
+    -cert-oop54-cpp,
+    -cert-oop57-cpp,
+
+    -clang-analyzer-optin.performance.Padding,
+    -clang-analyzer-optin.portability.UnixAPI,
+    -clang-analyzer-security.insecureAPI.bzero,
+    -clang-analyzer-security.insecureAPI.strcpy,
+
+    -darwin-*,
+
+    -fuchsia-*,
+
+    -google-build-using-namespace,
+    -google-readability-braces-around-statements,
+    -google-readability-casting,
+    -google-readability-function-size,
+    -google-readability-namespace-comments,
+    -google-readability-todo,
+    -google-upgrade-googletest-case,
+
+    -hicpp-avoid-c-arrays,
+    -hicpp-avoid-goto,
+    -hicpp-braces-around-statements,
+    -hicpp-explicit-conversions,
+    -hicpp-function-size,
+    -hicpp-member-init,
+    -hicpp-move-const-arg,
+    -hicpp-multiway-paths-covered,
+    -hicpp-named-parameter,
+    -hicpp-no-array-decay,
+    -hicpp-no-assembler,
+    -hicpp-no-malloc,
+    -hicpp-signed-bitwise,
+    -hicpp-special-member-functions,
+    -hicpp-uppercase-literal-suffix,
+    -hicpp-use-auto,
+    -hicpp-use-emplace,
+    -hicpp-vararg,
+
+    -linuxkernel-*,
+    -llvm-*,
+    -llvmlibc-*,
+    -openmp-*,
+
+    -misc-const-correctness,
+    -misc-no-recursion,
+    -misc-non-private-member-variables-in-classes,
+    -misc-confusable-identifiers, # useful but slooow
+    -misc-use-anonymous-namespace,
+
+    -portability-simd-intrinsics,
+    -zircon-*,
+'
+
+WarningsAsErrors: '*'
+
+CheckOptions:
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.LocalVariableCase: lower_case
+  readability-identifier-naming.StaticConstantCase: aNy_CasE
+  readability-identifier-naming.MemberCase: lower_case
+  readability-identifier-naming.PrivateMemberPrefix: ''
+  readability-identifier-naming.ProtectedMemberPrefix: ''
+  readability-identifier-naming.PublicMemberCase: lower_case
+  readability-identifier-naming.MethodCase: camelBack
+  readability-identifier-naming.PrivateMethodPrefix: ''
+  readability-identifier-naming.ProtectedMethodPrefix: ''
+  readability-identifier-naming.ParameterPackCase: lower_case
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.TemplateTemplateParameterCase: CamelCase
+  readability-identifier-naming.TemplateParameterCase: lower_case
+  readability-identifier-naming.TypeTemplateParameterCase: CamelCase
+  readability-identifier-naming.TypedefCase: CamelCase
+  readability-identifier-naming.UnionCase: CamelCase
+  modernize-loop-convert.UseCxx20ReverseRanges: false
+  performance-move-const-arg.CheckTriviallyCopyableMove: false
+  # Workaround clang-tidy bug: https://github.com/llvm/llvm-project/issues/46097
+  readability-identifier-naming.TypeTemplateParameterIgnoredRegexp: expr-type
+  cppcoreguidelines-avoid-do-while.IgnoreMacros: true
