@@ -5,7 +5,7 @@ toolchain:
 	 xmake f --toolchain=llvm
 
 build: comp
-	xmake
+	xmake -j8
 
 theme:
 	xmake g --theme=emoji
